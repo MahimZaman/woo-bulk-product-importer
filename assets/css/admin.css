@@ -1,0 +1,208 @@
+:root {
+  --wbpi-primary: #2271b1;
+  --wbpi-primary-hover: #135e96;
+  --wbpi-success: #16a34a;
+  --wbpi-danger: #dc2626;
+  --wbpi-warning: #f59e0b;
+  --wbpi-bg: #f6f7fb;
+  --wbpi-card: #ffffff;
+  --wbpi-border: #dcdcde;
+  --wbpi-text: #1d2327;
+  --wbpi-muted: #646970;
+  --wbpi-radius: 10px;
+  --wbpi-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.wbpi-dashboard {
+  margin: 20px 20px 0 0;
+}
+
+.wbpi-dashboard h1 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--wbpi-text);
+}
+
+.wbpi-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.wbpi-card {
+  background: var(--wbpi-card);
+  border: 1px solid var(--wbpi-border);
+  border-radius: var(--wbpi-radius);
+  box-shadow: var(--wbpi-shadow);
+  padding: 24px;
+  transition: 0.25s ease;
+}
+
+.wbpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.wbpi-card h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--wbpi-text);
+}
+
+.wbpi-card strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--wbpi-primary);
+}
+
+.wbpi-card code {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #0f172a;
+  word-break: break-all;
+  font-size: 13px;
+}
+
+.wbpi-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.wbpi-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.wbpi-status.success {
+  background: #ecfdf3;
+  color: var(--wbpi-success);
+}
+
+.wbpi-status.warning {
+  background: #fff7ed;
+  color: var(--wbpi-warning);
+}
+
+.wbpi-status.error {
+  background: #fef2f2;
+  color: var(--wbpi-danger);
+}
+
+.wbpi-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+.wbpi-btn-primary {
+  background: var(--wbpi-primary);
+  color: #fff;
+}
+
+.wbpi-btn-primary:hover {
+  background: var(--wbpi-primary-hover);
+  color: #fff;
+}
+
+.wbpi-btn-danger {
+  background: var(--wbpi-danger);
+  color: #fff;
+}
+
+.wbpi-btn-danger:hover {
+  opacity: 0.9;
+}
+
+.wbpi-btn-secondary {
+  background: #eef2f7;
+  color: var(--wbpi-text);
+}
+
+.wbpi-btn-secondary:hover {
+  background: #dbe4ef;
+}
+
+.wbpi-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--wbpi-border);
+  border-radius: var(--wbpi-radius);
+  overflow: hidden;
+}
+
+.wbpi-table th,
+.wbpi-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #edf0f4;
+  text-align: left;
+}
+
+.wbpi-table th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.wbpi-table tr:last-child td {
+  border-bottom: none;
+}
+
+.wbpi-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.wbpi-loading::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-top-color: var(--wbpi-primary);
+  border-radius: 50%;
+  animation: wbpi-spin 0.8s linear infinite;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.ab-item:has(#wbpi-progress-container) {
+  height: auto !important;
+}
+
+@keyframes wbpi-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 782px) {
+  .wbpi-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wbpi-card {
+    padding: 18px;
+  }
+}
